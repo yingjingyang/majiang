@@ -1,0 +1,233 @@
+.app-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.hero-panel,
+.feature-card,
+.table-layout,
+.player-card,
+.play-area,
+.log-panel,
+.room-card,
+.nickname-card {
+  background: rgba(10, 18, 35, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+}
+
+.hero-panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.eyebrow,
+.table-title,
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: #8bb8ff;
+  margin-bottom: 10px;
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.hero-actions,
+.table-actions,
+.action-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.ghost-btn,
+.poker-card {
+  border: none;
+  border-radius: 16px;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.primary-btn,
+.ghost-btn {
+  padding: 12px 18px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #ffcc66, #ff7a18);
+  color: #1d1200;
+  font-weight: 700;
+}
+
+.ghost-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f7ff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.primary-btn:hover,
+.ghost-btn:hover,
+.poker-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.primary-btn:disabled,
+.ghost-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.feature-grid,
+.players-grid,
+.room-list {
+  display: grid;
+  gap: 20px;
+}
+
+.feature-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 24px;
+}
+
+.feature-card {
+  padding: 24px;
+}
+
+.feature-card ul,
+.log-panel ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.table-layout,
+.lobby-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.table-layout {
+  padding: 24px;
+}
+
+.table-header,
+.lobby-header,
+.status-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.status-strip {
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.players-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.player-card,
+.play-area,
+.log-panel,
+.room-card,
+.nickname-card {
+  padding: 20px;
+}
+
+.player-card.current {
+  border-color: rgba(255, 204, 102, 0.7);
+}
+
+.card-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.poker-card {
+  min-width: 72px;
+  min-height: 104px;
+  padding: 14px 12px;
+  background: linear-gradient(180deg, #fffdf7, #f7e6c0);
+  color: #2e1c00;
+  font-weight: 700;
+}
+
+.poker-card.selected {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 36px rgba(255, 122, 24, 0.32);
+}
+
+.log-panel li + li {
+  margin-top: 8px;
+}
+
+.nickname-card label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.nickname-card input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.room-list {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.room-card {
+  display: grid;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    width: min(100% - 24px, 1000px);
+    padding-top: 20px;
+  }
+
+  .hero-panel,
+  .table-layout {
+    padding: 20px;
+  }
+
+  .hero-panel {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .poker-card {
+    min-width: 60px;
+    min-height: 94px;
+  }
+}
